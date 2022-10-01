@@ -1,0 +1,12 @@
+.bar {
+  --_bar-width: 100%;
+  --_bar-padding: 1.5rem; /* 24px */
+  --_bar-logo-size: 2.5rem; /* 40px */
+
+  padding: var(--_bar-padding);
+}
+
+.bar__logo {
+  width: var(--_bar-logo-size);
+  height: var(--_bar-logo-size);
+}

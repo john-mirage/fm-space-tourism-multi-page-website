@@ -1,0 +1,10 @@
+.app {
+  min-height: 100vh;
+  background-image: url(/src/images/home/background-home-mobile.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.app__bar {
+  color: red;
+}
