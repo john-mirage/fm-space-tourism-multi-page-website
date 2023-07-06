@@ -1,12 +1,8 @@
 import componentTemplate from "./app.template";
 import componentStyles from "./app.style";
-import themeStyles from "../../styles/theme.style";
+import themeStyles from "../../styles/theme.style"
 import globalStyles from "../../styles/global.style";
-import Page from "../page/page";
-
-const HOME_ROUTE = "/";
-const PRODUCT_ROUTE = "/produit";
-const CART_ROUTE = "/panier";
+import Page from "@components/page/page";
 
 class App extends HTMLElement {
   private hasBeenMountedOnce = false;
@@ -48,16 +44,20 @@ class App extends HTMLElement {
     if (typeof newHref === "string") {
       const url = new URL(newHref);
       switch (url.pathname) {
-        case HOME_ROUTE: {
+        case "/": {
           this.pageElement.currentPage = "home";
           break;
         }
-        case PRODUCT_ROUTE: {
-          this.pageElement.currentPage = "product";
+        case "/destination": {
+          this.pageElement.currentPage = "destination";
           break;
         }
-        case CART_ROUTE: {
-          this.pageElement.currentPage = "cart";
+        case "/crew": {
+          this.pageElement.currentPage = "crew";
+          break;
+        }
+        case "/technology": {
+          this.pageElement.currentPage = "technology";
           break;
         }
         default: {
@@ -111,12 +111,12 @@ class App extends HTMLElement {
       this.hasBeenMountedOnce = true;
     }
     window.addEventListener("popstate", this.handleHrefFromPopStateEvent);
-    this.addEventListener("audio-app-href", this.handleHrefFromCustomEvent);
+    this.addEventListener("st-app-href", this.handleHrefFromCustomEvent);
   }
 
   protected disconnectedCallback() {
     window.removeEventListener("popstate", this.handleHrefFromPopStateEvent);
-    this.removeEventListener("audio-app-href", this.handleHrefFromCustomEvent);
+    this.removeEventListener("st-app-href", this.handleHrefFromCustomEvent);
   }
 
   protected attributeChangedCallback(
@@ -135,6 +135,6 @@ class App extends HTMLElement {
   }
 }
 
-customElements.define("audio-app", App);
+customElements.define("st-app", App);
 
 export default App;

@@ -1,10 +1,10 @@
 import componentTemplate from "./page.template";
 import componentStyles from "./page.style";
 import globalStyles from "../../styles/theme.style";
-import { userAllowAnimation } from "../../utils/user-preferences";
-import CartAPI from "../../utils/cart";
+import { userAllowAnimation } from "../../../utils/user-preferences";
+import CartAPI from "../../../utils/cart";
 import View from "../view";
-import { fadeAndSlideXKeyframes, fadeKeyframes } from "../../utils/animation";
+import { fadeAndSlideXKeyframes, fadeKeyframes } from "../../../utils/animation";
 
 const TO_LEFT = true;
 const TO_RIGHT = false;
